@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content_title %}
+<a>Uploading file {{ file_uploading.name }}</a>
+{% endblock content_title %}
+
+{% block content %}
+
+        <hr>
+        <p>Status: {% if file_uploading.ready %}
+                                Ready
+                          {% else %}
+                                Processing
+                          {% endif %}
+        </p>
+        <p>Chunks left: {{ file_uploading.percents }}</p>
+        <p>Characters: {{ file_uploading.characters }}</p>
+        
+{% endblock content %}
